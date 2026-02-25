@@ -1,0 +1,58 @@
+Requirements
+
+Create Loan API
+
+POST /api/v1/loans 
+
+Request Body:
+{
+  "customerId": "CUST123",
+  "amount": 50000,
+  "tenureMonths": 24
+}
+
+
+Business Rules:
+amount must be > 0
+tenureMonths must be between 6 and 60
+A customer cannot have more than ONE active loan (CREATED or APPROVED)
+Loan status initially = CREATED
+Loan ID auto-generated
+
+
+Response:
+{
+  "loanId": 1,
+  "status": "CREATED"
+}
+
+LoansController
+/api/v1/
+
+RequestMapping /api/v1/loans
+
+Request Body -> CreateLoanRequestDTO 
+
+customerId
+amount
+tenureMonths
+
+Response -> CreateLoanResponseDTO
+
+loanId
+status
+
+LoanRepository
+
+    createLoan()
+
+LoanEntity
+
+customerId
+amount
+tenureMonths
+loanId
+status
+
+
+
