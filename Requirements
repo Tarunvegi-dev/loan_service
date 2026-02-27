@@ -19,6 +19,8 @@ A customer cannot have more than ONE active loan (CREATED or APPROVED)
 Loan status initially = CREATED
 Loan ID auto-generated
 
+non-functional
+Customer should be validated
 
 Response:
 {
